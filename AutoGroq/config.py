@@ -60,7 +60,3 @@ elif LLM_PROVIDER == "ollama":
     }   
 else:
     MODEL_TOKEN_LIMITS = {}
-
-
-# Database path
-AUTOGEN_DB_PATH = "C:\\Users\\j\\.autogenstudio\\database.sqlite"
