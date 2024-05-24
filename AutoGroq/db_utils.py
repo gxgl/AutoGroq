@@ -4,14 +4,15 @@ import os
 import sqlite3
 import streamlit as st
 import uuid
+from pathlib import Path
 
-from config import AUTOGEN_DB_PATH
 from file_utils import create_agent_data, create_skill_data, sanitize_text
 from ui_utils import get_workflow_from_agents
 
 
 def export_to_autogen():
-    db_path = AUTOGEN_DB_PATH
+    # Fix for file path translation foe Mac, Linux and Windows
+    db_path = Path(Path.home(), ".autogenstudio", "database.sqlite")
     print(f"Database path: {db_path}")
 
     if db_path:
